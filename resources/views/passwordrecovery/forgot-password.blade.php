@@ -1,4 +1,3 @@
-
 <x-app>
     <div class="login-box">
         <div class="login-logo">
@@ -30,7 +29,7 @@
               <a href="{{url('/')}}">Login</a>
             </p>
             <p class="mb-0">
-              <a href="{{url('register')}}" class="text-center">Register a new membership</a>
+              <a href="{{route('register')}}" class="text-center">Register a new membership</a>
             </p>
           </div>
           <!-- /.login-card-body -->

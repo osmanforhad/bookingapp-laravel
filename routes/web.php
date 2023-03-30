@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,12 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('login.login');
+Route::controller(LoginController::class)->middleware(['guest'])->group(function () {
+    Route::get('/', 'index')->name('login');
+    Route::get('/register', 'register')->name('register');
+    Route::get('/forgot_password', 'forgot_password')->name('forgot_password');
+    Route::post('/register', 'process_register');
 });
-Route::get('/register', function () {
-    return view('register.register');
-});
-Route::get('/forgot-password', function () {
-    return view('passwordrecovery.forgot-password');
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard.index');
+    });
 });

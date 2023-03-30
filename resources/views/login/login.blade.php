@@ -54,10 +54,10 @@
         <!-- /.social-auth-links -->
   
         <p class="mb-1">
-          <a href="{{url('forgot-password')}}">I forgot my password</a>
+          <a href="{{route('forgot_password')}}">I forgot my password</a>
         </p>
         <p class="mb-0">
-          <a href="{{url('register')}}" class="text-center">Register a new membership</a>
+          <a href="{{route('register')}}" class="text-center">Register a new membership</a>
         </p>
       </div>
       <!-- /.login-card-body -->
